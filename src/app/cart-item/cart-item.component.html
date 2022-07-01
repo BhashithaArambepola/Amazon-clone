@@ -10,7 +10,7 @@
 
   </ng-container>
 
-  <div class="item-price" >{{item.price}}</div>
+  <div class="item-price" >{{item.price | currency : 'USD'}}</div>
   <div class="item-stock" > In Stock :{{item.qty}}</div>
   <p>add to Cart</p>
   <div class="input-group mb-3 add-to-cart-ctrl">

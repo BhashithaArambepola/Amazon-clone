@@ -1,7 +1,15 @@
 <div class="cart-item" >
   <img class="item-image" src="{{item.image}}">
   <p class="item-description" >{{item.description}}</p>
-  <div>⭐⭐⭐⭐⭐</div>
+  <ng-container [ngSwitch]="item.rating" ]>
+    <div *ngSwitchCase="5">⭐⭐⭐⭐⭐</div>
+    <div *ngSwitchCase="4">⭐⭐⭐⭐</div>
+    <div *ngSwitchCase="3">⭐⭐⭐</div>
+    <div *ngSwitchCase="2">⭐⭐</div>
+    <div *ngSwitchCase="1">⭐</div>
+
+  </ng-container>
+
   <div class="item-price" >{{item.price}}</div>
   <div class="item-stock" > In Stock :{{item.qty}}</div>
   <p>add to Cart</p>

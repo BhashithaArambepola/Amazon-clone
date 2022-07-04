@@ -1,6 +1,6 @@
 import {Item} from "./dto/item";
 
-const DUMMY_DATA: Array<Item> = [
+export const DUMMY_DATA: Array<Item> = [
     new Item("1001",
       "https://m.media-amazon.com/images/I/41-aexp44tL._AC_UL320_.jpg",
       "Apple EarPods with Lightning Connector - White",

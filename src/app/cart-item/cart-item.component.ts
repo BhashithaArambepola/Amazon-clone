@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Item} from "../dto/item";
 
 @Component({
@@ -7,12 +7,9 @@ import {Item} from "../dto/item";
   styleUrls: ['./cart-item.component.scss']
 })
 export class CartItemComponent implements OnInit {
-  item = new Item("1001",
-    "https://m.media-amazon.com/images/I/41-aexp44tL._AC_UL320_.jpg",
-    "Apple AirPods (2nd Generation)",
-    2,
-    299,
-    5)
+
+  @Input()
+  item!: Item;
 
 
   inCart = 0;

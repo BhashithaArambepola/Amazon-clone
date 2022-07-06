@@ -2,6 +2,9 @@ header{
   height: 60px;
   background-color: #232f3e;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 
   img{
     //width: 50px;
@@ -10,5 +13,41 @@ header{
     margin-left: 20px;
     margin-bottom: 5px;
     margin-top: 5px;
+  }
+
+  .cart-container{
+    color: #ffffff;
+    display: flex;
+   //justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    cursor: pointer;
+    height: 55px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+&:hover{
+  border: 1px solid white;
+
+}
+    span{
+      position: absolute;
+
+      font-weight: bold;
+      color: #f08804;
+      top: 5px;
+      left: 12px;
+
+    }
+    small{
+      padding: 0px 10px;
+    }
+
+    .cart-icon{
+      background-image: url('../../assets/logo.png');
+      background-position: -10px -340px;
+      height: 26px;
+      width: 38px;
+
+    }
   }
 }

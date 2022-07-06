@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {DUMMY_DATA} from "./dummy-data";
+import {Item} from "./dto/item";
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,29 @@ import {DUMMY_DATA} from "./dummy-data";
 })
 export class AppComponent {
 items = DUMMY_DATA;
+cartItems: Array<{code: string, qty:number}>=[];
+
+  updateCart(inCart: number, it: Item) {
+
+    const item=this.cartItems.find(i => i.code=== it.code );
+
+    if (item){
+      item.qty= inCart;
+if(item.qty ===0){
+  this.cartItems.splice(this.cartItems.indexOf(item),1);
+}
+    }
+    else {
+      this.cartItems.push({code: it.code , qty:inCart})
+    }
+
+
+    console.log(this.cartItems);
+  }
+
+  getTotalItemsInCart(): number{
+    let totalitems =0;
+   this.cartItems.forEach(item=>totalitems += item.qty );
+    return totalitems;
+  }
 }
